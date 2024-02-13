@@ -1,4 +1,4 @@
-package Ej6;
+package Ej7;
 
 import java.io.IOException;
 import java.net.*;
@@ -10,14 +10,14 @@ public class ServerSocketStream {
             DatagramSocket datagramSocket = new DatagramSocket(address);
 
             System.out.println("Getting message...");
-            byte[] message = new byte[4];
-            DatagramPacket serverDatagram = new DatagramPacket(message, 4);
+            byte[] message = new byte[5];
+            DatagramPacket serverDatagram = new DatagramPacket(message, 5);
             datagramSocket.receive(serverDatagram);
-            System.out.println("Message: " + new String(message));
+            System.out.println("Client message: " + new String(message));
             String clientDatagramToString = new String(message);
 
-            if (clientDatagramToString.equals("Hola")) {
-                String serverMessage = "¿Qué tal?";
+            if (clientDatagramToString.equals("token")) {
+                String serverMessage = "Recibido";
                 System.out.println("Sending message...");
                 byte[] response = serverMessage.getBytes();
                 InetAddress secondAddress = serverDatagram.getAddress();
