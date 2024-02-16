@@ -12,9 +12,9 @@ public class HundirLaFlota {
         }
 
         for (Map.Entry<Coordinates, Boat> entry : map.entrySet()) {
-            Coordinates coordinates = entry.getKey();
             Boat boat = entry.getValue();
-            System.out.println("Coordinates: " + coordinates.getX() + coordinates.getY() + ", Boat: " + boat.toString());
+            System.out.println("Boat is alive: " + boat.isAlive() + " \nBoat times tocuhed: " + boat.getTimesTouched() + " \nBoat coordenates: (" + boat.getCoordinates().getX() + ", " + boat.getCoordinates().getY() + ")");
+            System.out.println();
         }
     }
 }
